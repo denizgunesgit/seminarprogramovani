@@ -1,13 +1,14 @@
+#!/usr/bin/env python3
 
 
-...
+'''
 lod a odvozene tridy pro vesmirni souboj
-...
+'''
 
-class lod:
-    ...
+class Lod:
+    """
     zakladni
-    ...
+    """
 
     def __init__(self, jmeno, trup, utok, stit, kostka):
         self._jmeno = jmeno
@@ -19,11 +20,11 @@ class lod:
         self._zprava = ''
 
     def __str__(self):
-        return str(self.jmeno)
+        return str(self._jmeno)
 
-    def utoc(self, souper)
+    def utoc(self, souper):
         uder = self._utok + self._kostka.hod()
-        zprava = f'{self.jmeno} pali kanoli za {uder} HP.'
+        zprava = f'{self._jmeno} pali kanoli za {uder} HP.'
         self.nastav_zpravu(zprava)
         souper.bran_se(uder)
 
@@ -34,12 +35,14 @@ class lod:
             self._trup -= poskozeni
             if self._trup < 0:
                 self.trup = 0
-                zprava = f'{zprava[:-1]} a byla znicena'
+                zprava = f"{zprava[:-1]} a byla znicena"
         else:
+            zprava = f'{self._jmeno} odrazil utok stity.'
+        self.nastav_zpravu(zprava)
 
 
-    def nastav_zpravu(self,zprava):
+    def nastav_zpravu(self, zprava):
         self._zprava = zprava       
 
-    def vypis zpravy(self):
+    def vypis_zpravu(self):
         return self._zprava

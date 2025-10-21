@@ -15,12 +15,10 @@ class Kostka:
 
     def getPocet_sten(self):
         return self.__pocet_sten
-
-    def setPocetsten(self, pocet_sten)
     
 
 def main():
-    k1 = Kostka()S
+    k1 = Kostka()
     k2 = Kostka(120)
     print (k1.hod())
     print (k2.hod())
